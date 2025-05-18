@@ -1,0 +1,18 @@
+{
+    "id": 130,
+    "name": "Noyan Circles",
+    "author": "Noyan",
+    "creators": ["Noyan"],
+    "verifier": "Noyan",
+    "verification": "https://youtu.be/9J1Uo3yiZgA",
+    "percentToQualify": 10,
+    "password": "Copyable",
+    "records": [
+        {
+            "user": "Nobody",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ]
+}

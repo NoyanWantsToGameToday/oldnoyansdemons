@@ -1,0 +1,18 @@
+{
+    "id": 123,
+    "name": "Bloodworks",
+    "author": "Noyan",
+    "creators": ["Noyan"],
+    "verifier": "Noyan",
+    "verification": "https://www.youtube.com/watch?v=T7yBDai_l2M&pp=ygUVbm95YW53YW50c3RvZ2FtZXRvZGF5",
+    "percentToQualify": 10,
+    "password": "Copyable",
+    "records": [
+        {
+            "user": "Nobody",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ]
+}

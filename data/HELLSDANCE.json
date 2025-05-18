@@ -1,0 +1,18 @@
+{
+    "id": 110,
+    "name": "Hell's Dance",
+    "author": "Noyan",
+    "creators": ["Noyan"],
+    "verifier": "Noyan",
+    "verification": "https://youtu.be/AbhXCsMmT0s",
+    "percentToQualify": "17",
+    "password": "Free To Copy",
+    "records": [
+        {
+            "user": "Nobody",
+            "link": "None",
+            "percent": 0,
+            "hz": 0
+        }
+    ]
+}
