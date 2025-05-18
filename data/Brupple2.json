@@ -1,0 +1,19 @@
+
+{
+    "id": 142,
+    "name": "Brupple 2",
+    "author": "Noyan",
+    "creators": ["Noyan"],
+    "verifier": "Exence",
+    "verification": "https://youtu.be/TOrqM-QMhsY",
+    "percentToQualify": 10,
+    "password": "Copyable",
+    "records": [
+        {
+            "user": "Nobody",
+            "link": "None",
+            "percent": 0,
+            "hz": 0
+        }
+    ]
+}
