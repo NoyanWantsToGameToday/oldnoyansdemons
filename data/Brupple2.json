@@ -10,10 +10,10 @@
     "password": "Copyable",
     "records": [
         {
-            "user": "Nobody",
-            "link": "None",
-            "percent": 0,
-            "hz": 0
+            "user": "Noyan",
+            "link": "https://youtu.be/2AHPyLllBJU",
+            "percent": 100,
+            "hz": 60
         }
     ]
 }
