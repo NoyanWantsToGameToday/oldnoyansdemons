@@ -1,0 +1,18 @@
+{
+    "id": 150,
+    "name": "Sakupen Pringles"
+    "author": "Noyan",
+    "creators": ["Noyan"],
+    "verifier": "Noyan",
+    "verification": "https://youtu.be/MTxAiSI1owQ",
+    "percentToQualify": 13,
+    "password": "Copyable",
+    "records": [
+        {
+            "user": "Nobody",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ]
+}
