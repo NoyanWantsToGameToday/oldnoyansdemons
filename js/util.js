@@ -1,23 +1,34 @@
-// https://stackoverflow.com/questions/3452546/how-do-i-get-the-youtube-video-id-from-a-url
+// Function to extract YouTube video ID from a URL
 export function getYoutubeIdFromUrl(url) {
     return url.match(
         /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/,
     )?.[1] ?? '';
 }
 
-export function embed(video) {
-    return `https://www.youtube.com/embed/${getYoutubeIdFromUrl(video)}`;
+// Function to create an embed URL with optional start and end times
+export function embed(video, start = 0, end = null) {
+    const videoId = getYoutubeIdFromUrl(video);
+    let embedUrl = `https://www.youtube.com/embed/${videoId}?start=${start}`;
+
+    // If an end time is provided, append it to the URL
+    if (end) {
+        embedUrl += `&end=${end}`;
+    }
+
+    return embedUrl;
 }
 
+// Function to format numbers with localized thousand separators
 export function localize(num) {
     return num.toLocaleString(undefined, { minimumFractionDigits: 3 });
 }
 
+// Function to get thumbnail image URL from YouTube video ID
 export function getThumbnailFromId(id) {
-    return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+    return `https://img.youtube.com/vi/${id}/mqdefault.jpg`; // You can change this to 'hqdefault.jpg' or 'sddefault.jpg' for other quality options
 }
 
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+// Function to shuffle an array randomly
 export function shuffle(array) {
     let currentIndex = array.length, randomIndex;
 
