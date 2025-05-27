@@ -5,13 +5,19 @@
     "creators": ["Noyan", "Exence"],
     "verifier": "Noyan",
     "verification": "https://www.youtube.com/watch?v=rslABbncwcc",
-    "percentToQualify": 25,
+    "percentToQualify": 12,
     "password": "Copyable",
     "records": [
         {
             "user": "Exence",
             "link": "https://youtu.be/mqd9MRPo4TM",
             "percent": 71,
+            "hz": 60
+        },
+        {
+            "user": "Kageyama",
+            "link": "https://www.youtube.com/watch?v=GysppsheQ5s",
+            "percent": 18,
             "hz": 60
         }
     ]
