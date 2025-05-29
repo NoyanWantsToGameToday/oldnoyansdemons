@@ -128,6 +128,9 @@ export default {
                     <p>
                         Do not use easy modes, only a record of the unmodified level qualifies
                     </p>
+                    <p>
+                        Submit records through the "Submit Record" button. DM's will not be accepted.
+                    </p>
                 </div>
             </div>
         </main>
