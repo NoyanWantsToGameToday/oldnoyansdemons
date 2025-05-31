@@ -12,6 +12,7 @@ export default {
         loading: true,
         selected: 0,
         err: [],
+        searchTerm: "", // NEW: Search term
     }),
     template: `
         <main v-if="loading">
@@ -24,26 +25,35 @@ export default {
                         Leaderboard may be incorrect, as the following levels could not be loaded: {{ err.join(', ') }}
                     </p>
                 </div>
+                <!-- NEW: Search bar -->
+                <div class="search-bar" style="margin-bottom: 1em;">
+                    <input
+                        type="text"
+                        v-model="searchTerm"
+                        placeholder="Search player name..."
+                        class="search-input"
+                    />
+                </div>
                 <div class="board-container">
                     <table class="board">
-                        <tr v-for="(ientry, i) in leaderboard">
+                        <tr v-for="(ientry, i) in filteredLeaderboard" :key="ientry.user">
                             <td class="rank">
-                                <p class="type-label-lg">#{{ i + 1 }}</p>
+                                <p class="type-label-lg">#{{ getDisplayedRank(i) }}</p>
                             </td>
                             <td class="total">
                                 <p class="type-label-lg">{{ localize(ientry.total) }}</p>
                             </td>
-                            <td class="user" :class="{ 'active': selected == i }">
-                                <button @click="selected = i">
+                            <td class="user" :class="{ 'active': selected == getOriginalIndex(i) }">
+                                <button @click="selected = getOriginalIndex(i)">
                                     <span class="type-label-lg">{{ ientry.user }}</span>
                                 </button>
                             </td>
                         </tr>
                     </table>
                 </div>
-                <div class="player-container">
+                <div class="player-container" v-if="filteredLeaderboard.length > 0">
                     <div class="player">
-                        <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
+                        <h1>#{{ getDisplayedRank(filteredSelectedIndex) }} {{ entry.user }}</h1>
                         <h3>{{ entry.total }}</h3>
                         <h2 v-if="entry.verified.length > 0">Verified ({{ entry.verified.length}})</h2>
                         <table class="table">
@@ -89,13 +99,30 @@ export default {
                         </table>
                     </div>
                 </div>
+                <div v-else>
+                    <p>No players found.</p>
+                </div>
             </div>
         </main>
     `,
     computed: {
         entry() {
-            return this.leaderboard[this.selected];
+            // Show the selected player from the filtered list if searching, else from the full list
+            if (this.filteredLeaderboard.length === 0) return {};
+            return this.filteredLeaderboard[this.filteredSelectedIndex];
         },
+        filteredLeaderboard() {
+            if (!this.searchTerm) return this.leaderboard;
+            const term = this.searchTerm.toLowerCase();
+            return this.leaderboard.filter(e => e.user && e.user.toLowerCase().includes(term));
+        },
+        filteredSelectedIndex() {
+            // Map this.selected (which is the index in the original leaderboard) to the filtered list
+            if (this.filteredLeaderboard.length === 0) return 0;
+            const selectedUser = this.leaderboard[this.selected] && this.leaderboard[this.selected].user;
+            const idx = this.filteredLeaderboard.findIndex(e => e.user === selectedUser);
+            return idx !== -1 ? idx : 0;
+        }
     },
     async mounted() {
         const [leaderboard, err] = await fetchLeaderboard();
@@ -106,5 +133,15 @@ export default {
     },
     methods: {
         localize,
+        getDisplayedRank(filteredIndex) {
+            // Returns the rank as it appears in the full leaderboard
+            const entry = this.filteredLeaderboard[filteredIndex];
+            return this.leaderboard.findIndex(e => e.user === entry.user) + 1;
+        },
+        getOriginalIndex(filteredIndex) {
+            // Returns the original index in the full leaderboard for selection
+            const entry = this.filteredLeaderboard[filteredIndex];
+            return this.leaderboard.findIndex(e => e.user === entry.user);
+        }
     },
 };
