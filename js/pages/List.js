@@ -66,7 +66,7 @@ export default {
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 75"><strong>{{ filteredLevel.percentToQualify }}%</strong> or better to qualify</p>
                     <p v-else-if="selected +1 <= 50"><strong>100%</strong> or better to qualify</p>
-                    <p v-else>This level does not accept new records.</p>
+                    <p v-else>This level does not accept new records below 100%.</p>
                     <table class="records">
                         <tr v-for="record in filteredLevel.records" class="record">
                             <td class="percent">
