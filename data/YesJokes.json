@@ -1,0 +1,18 @@
+{
+    "id": 162,
+    "name": "Yes Jokes",
+    "author": "Noyan",
+    "creators": ["Noyan"],
+    "verifier": "Noyan",
+    "verification": "https://youtu.be/4-2Y-P0FdM0",
+    "percentToQualify": 13,
+    "password": "Copyable",
+    "records": [
+        {
+            "user": "Nobody",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ]
+}
