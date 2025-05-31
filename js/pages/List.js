@@ -33,8 +33,11 @@ export default {
                     <tr v-for="([level, err], i) in filteredList" :key="level?.id || i">
                         <td class="rank">
                             <p v-if="i + 1 <= 10" class="type-label-lg">#{{ i + 1 }}</p>
-                            <p v-else class="type-label-lg">Legacy</p>
+                            <p v-else class="type-label-lg">Extended</p>
                         </td>
+                        <td class="rank">
+                            <p v-if="i + 1 <= 20" class="type-label-lg">#{{ i + 1 }}</p>
+                            <p v-else class="type-label-lg">Legacy</p>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
                                 <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
