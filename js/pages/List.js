@@ -112,6 +112,9 @@ export default {
                         Achieved the record without using hacks (however, TPS bypass is allowed, up to 240 tps)
                     </p>
                     <p>
+                        Cheat indicator must be turned on during all records.
+                    </p>
+                    <p>
                         Achieved the record on the level that is listed on the site - please check the level ID before you submit a record
                     </p>
                     <p>
