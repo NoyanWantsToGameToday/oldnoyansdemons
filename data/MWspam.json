@@ -1,0 +1,18 @@
+{
+    "id": 167,
+    "name": "MWSpam",
+    "author": "Noyan",
+    "creators": ["Noyan"],
+    "verifier": "Noyan",
+    "verification": "https://youtu.be/q5ukbi_O6Yw",
+    "percentToQualify": 32,
+    "password": "Copyable",
+    "records": [
+        {
+            "user": "Nobody",
+            "link": "",
+            "percent": 0,
+            "hz": "0"
+        }
+    ]
+}
